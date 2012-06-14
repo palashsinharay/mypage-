@@ -1,0 +1,12 @@
+This project is build using jenkins and aegir for for drupal mutisite.
+
+1. Installing aegir on ubuntu is little complex job thanks to Doka for is awesome script to automate the complete process
+     reff : https://github.com/doka/install-aegir-on-ubuntu/wiki/Aegir-master-server-install
+     you can get the script here :https://github.com/doka/install-aegir-on-ubuntu/blob/natty/install-aegir-on-ubuntu.sh
+
+2. Next job is installing jenkins (A contineous intregration tool) you can get the installation instruction on here : https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu
+
+3. now study this http://mig5.net/content/manage-your-aegir-system-command-line to get familer with aegir
+
+4. ansd study this to  http://mig5.net/content/zero-touch-drupal-deployment-jenkins-aegir-git-fabric-and-drush to get familer with jenkins Deployment.   
+
