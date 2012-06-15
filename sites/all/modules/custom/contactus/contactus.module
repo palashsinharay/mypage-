@@ -1,0 +1,27 @@
+<?php
+function contactus_menu() {
+
+ $items['contactus'] = array(
+ 'title' => 'contactus View',
+ 'page callback' => 'contactus_view',
+ 'access arguments' => array('access content'),
+     'type' => MENU_CALLBACK
+ );
+
+ return $items;
+}
+
+function contactus_view()
+{
+    $result = db_query("SELECT * FROM {contactus}");
+    
+    $row = db_fetch_object($result);
+    /*echo "<pre>";
+    print_r($result->);
+    echo "</pre>";*/
+    $output = "Street Address :".$row->street."<br> City :".$row->city."<br> Zip :".$row->zip."<br> Country :".$row->country."<br> State :".$row->state."<br> Phone:".$row->phone."<br> Email :".$row->email."<br>";
+    
+    return $output;
+}
+
+?>

@@ -1,0 +1,91 @@
+<?php 
+//$Id$
+/**
+*@file
+*This is a Module to create page using a wizard..
+*
+**/
+
+function wizpage_perm(){
+    return array('create page using wizard');
+}
+
+/**Implementation of hook_menu()**/
+
+function wizpage_menu(){
+    $query = db_query("SELECT * FROM {node} WHERE title = 'Product page' OR title = 'Home page' ");
+   
+    $node_id = array();
+    
+    while($row = db_fetch_array($query) ){
+        
+       
+        $node_id[] = $row['nid'];
+        echo $row['nid'];
+        
+        }
+    
+    
+ 
+    $node1 = node_load($node_id[0]);
+    $node2 = node_load($node_id[1]);
+   
+   // print_r($node1);
+   // die(1);
+   
+    if($node1->body AND $node2->body)
+    {
+      //echo "ifffffffffff";
+      //die(1);
+        
+        $items['wizpage'] = array(
+        'title' => 'create page wizard',
+        'page callback' => 'create_page',
+        'access callback' => 'user_access',
+        'access arguments' => array('create page using wizard'),
+        'type' => MENU_CALLBACK,
+        'file' => 'page.create.inc'
+         );
+    }else {
+        
+       // echo "elseeeeeeeeeeeeee";
+       // die(1);
+        
+        $items['wizpage'] = array(
+        'title' => 'create page wizard',
+        'page callback' => 'create_page',
+        'access callback' => 'user_access',
+        'access arguments' => array('create page using wizard'),
+        'type' => MENU_NORMAL_ITEM,
+        'file' => 'page.create.inc'
+        );
+    }
+   
+    $items['wizpage/next'] = array(
+        'title' => 'create page wizard',
+        'page callback' => 'create_page_next',
+        'access callback' => 'user_access',
+        'access arguments' => array('create page using wizard'),
+        'type' => MENU_CALLBACK,
+        'file' => 'page.create.inc'
+    );
+    
+    $items['wizpage/next2'] = array(
+        'title' => 'create page wizard',
+        'page callback' => 'create_page_next2',
+        'access callback' => 'user_access',
+        'access arguments' => array('create page using wizard'),
+        'type' => MENU_CALLBACK,
+        'file' => 'page.create.inc'
+    );
+    
+    $items['wizpage/next3'] = array(
+        'title' => 'create page wizard',
+        'page callback' => 'create_page_next3',
+        'access callback' => 'user_access',
+        'access arguments' => array('create page using wizard'),
+        'type' => MENU_CALLBACK,
+        'file' => 'page.create.inc'
+    );
+    return $items;
+}
