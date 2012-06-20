@@ -29,7 +29,10 @@ api = 2
 ; Drupal 6.x core:
 projects[drupal][version] = 6
 
-  
+; copy of cypages_profiler
+projects[cypages_profiler][type] = "profile"
+projects[cypages_profiler][download][type] = "git"
+projects[cypages_profiler][download][url] = "git://github.com/palashsinharay/cypages_profiler.git"  
   
 ; Modules
 ; --------
@@ -43,6 +46,17 @@ projects[views][version] = 2.16
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
 
+; custom Modules
+; --------
+projects[wizpage][type] = "module"
+projects[wizpage][download][type] = "git"
+projects[wizpage][download][url] = "git://github.com/palashsinharay/wizpage.git"
+projects[wizpage][subdir] = "contrib"
+
+projects[contactus][type] = "module"
+projects[contactus][download][type] = "git"
+projects[contactus][download][url] = "git://github.com/palashsinharay/contactus.git"
+projects[contactus][subdir] = "contrib"
   
 
 ; Themes
