@@ -30,9 +30,9 @@ api = 2
 projects[drupal][version] = 6
 
 ; copy of cypages_profiler
-projects[cypages_profiler][type] = "profile"
-projects[cypages_profiler][download][type] = "git"
-projects[cypages_profiler][download][url] = "git://github.com/palashsinharay/cypages_profiler.git"  
+projects[cypages][type] = "profile"
+projects[cypages][download][type] = "git"
+projects[cypages][download][url] = "git://github.com/palashsinharay/cypages_profiler.git"  
   
 ; Modules
 ; --------
