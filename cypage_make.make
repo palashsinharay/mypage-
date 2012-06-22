@@ -52,7 +52,7 @@ projects[wizpage][type] = "module"
 projects[wizpage][download][type] = "git"
 projects[wizpage][download][url] = "git://github.com/palashsinharay/wizpage.git"
 projects[wizpage][subdir] = "contrib"
-
+;---------
 projects[contactus][type] = "module"
 projects[contactus][download][type] = "git"
 projects[contactus][download][url] = "git://github.com/palashsinharay/contactus.git"
