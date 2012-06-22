@@ -63,6 +63,12 @@ projects[contactus][subdir] = "contrib"
 ; --------
 projects[omega][version] = 1.0
 projects[omega][type] = "theme"
+projects[acquia_marina][version] = 3.1
+projects[acquia_marina][type] = "theme"
+projects[acquia_prosper][version] = 1.1
+projects[acquia_prosper][type] = "theme"
+projects[acquia_slate][version] = 3.0-beta1
+projects[acquia_slate][type] = "theme"
 
   
   
