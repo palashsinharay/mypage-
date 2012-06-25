@@ -1,0 +1,6 @@
+drush provision-save @$1 --context_type='site' --uri=$1 --platform='@platform_drupal622' --server='@server_master' --db_server='@server_master' --profile=$2 --client_name='admin'
+drush @$1 provision-install
+cd /var/aegir/platforms/drupal-6.22/sites/$1/
+drush sql-query "UPDATE users SET pass = MD5('new') WHERE uid =1;"
+drush user-create demouser --mail="demouser@example.com" --password="letmein"
+drush @hostmaster hosting-task @platform_drupal622 verify
