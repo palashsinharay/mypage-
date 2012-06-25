@@ -49,13 +49,13 @@ projects[views][subdir] = "contrib"
 ; custom Modules
 ; --------
 projects[wizpage][type] = "module"
-projects[wizpage][download][type] = "git"
-projects[wizpage][download][url] = "git://github.com/palashsinharay/wizpage.git"
+projects[wizpage][download][type] = "file"
+projects[wizpage][download][url] = "http://dump.indusnetlabs.com/wizpage.tar.gz"
 projects[wizpage][subdir] = "contrib"
 ;----------
 projects[contactus][type] = "module"
-projects[contactus][download][type] = "git"
-projects[contactus][download][url] = "git://github.com/palashsinharay/contactus.git"
+projects[contactus][download][type] = "file"
+projects[contactus][download][url] = "http://dump.indusnetlabs.com/contactus.tar.gz"
 projects[contactus][subdir] = "contrib"
   
 
