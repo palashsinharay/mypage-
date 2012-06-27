@@ -3,7 +3,7 @@
 
 $host="localhost"; // Host name
 $username="root"; // Mysql username
-$password="toor"; // Mysql password
+$password="root"; // Mysql password
 $db_name="cypages"; // Database name
 
 

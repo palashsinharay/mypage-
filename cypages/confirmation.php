@@ -21,7 +21,7 @@ $count=mysql_num_rows($result1);
 // if found this passkey in our database, retrieve data from table "temp_members_db"
 if($count==1){
 
- header( 'Location: http://cypages.indusnetlabs.com/site-creation-stage-2.php' ) ;
+ header( 'Location: site-creation-stage-2.php' ) ;
 }
 
 // if not found passkey, display message "Wrong Confirmation code"

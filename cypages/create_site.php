@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("phpmailer/class.phpmailer.php");
 $url=$_GET['url'];
 $pro =trim($_GET['profile']);
 //echo $pro;
@@ -49,9 +50,36 @@ $output = shell_exec("sudo -u aegir ./createsite_final2 ".$url.".indusnetlabs.co
 //echo "<pre>$output</pre>";
 $url2 ="http://".$url.".indusnetlabs.com";
 $msg1 = "your site name is ".$url.".indusnetlabs.com";
+//-----------SEND MAIL FORM----Start------------------------------
 
-mail($email,"cypage account details","your site login details","your site url is: ".$url.".indusnetlabs.com/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass"); 
+$mail             = new PHPMailer(); // PHPMailer object init
 
+//------------------Your smtp settings-------start-----------
+
+$mail->IsSMTP();
+$mail->SMTPAuth   = true;                  // enable SMTP authentication
+$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+$mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+$mail->Port       = 465;                   // set the SMTP port for the GMAIL server
+
+$mail->Username   = "devops@indusnetlabs.com";  // GMAIL username
+$mail->Password   = "d3v0ps123";            // GMAIL password
+
+$mail->AddReplyTo("devops@indusnetlabs.com","palash sinha ray");
+
+$mail->From       = "palash@cypage.deploy.loc";
+$mail->FromName   = "palash sinha ray";
+
+$mail->Subject    = "PHPMailer Test Subject via gmail";
+//------------------Your smtp settings-------End-----------
+
+$message = "cypage account details","your site login details","your site url is: ".$url.".indusnetlabs.com/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass");
+
+$mail->message;
+
+$mail->AddAddress($email); 
+
+//-----------SEND MAIL FORM----End--------------------------------
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->

@@ -1,5 +1,6 @@
 <?php 
 include('config.php');
+include("phpmailer/class.phpmailer.php");
 // table name
 $tbl_name="temp_members_db";
 // Random confirmation code
@@ -16,28 +17,44 @@ if($result){
 
 // ---------------- SEND MAIL FORM ----------------
 
-// send e-mail to ...
-$to=$email;
 
-// Your subject
-$subject="Your confirmation link here";
+$mail             = new PHPMailer(); // PHPMailer object init
 
-// From
-$header="from: Cypages <cypages@gmail.com>";
+//------------------Your smtp settings-------start-----------
+
+$mail->IsSMTP();
+$mail->SMTPAuth   = true;                  // enable SMTP authentication
+$mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+$mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+$mail->Port       = 465;                   // set the SMTP port for the GMAIL server
+
+$mail->Username   = "devops@indusnetlabs.com";  // GMAIL username
+$mail->Password   = "d3v0ps123";            // GMAIL password
+
+$mail->AddReplyTo("devops@indusnetlabs.com","palash sinha ray");
+
+$mail->From       = "palash@cypage.deploy.loc";
+$mail->FromName   = "palash sinha ray";
+
+$mail->Subject    = "PHPMailer Test Subject via gmail";
+//------------------Your smtp settings-------End-----------
 
 // Your message
 $message="Your Comfirmation link \r\n";
 $message.="Click on this link to activate your account \r\n";
 $message.=$_SERVER['SERVER_NAME']."/confirmation.php?passkey=$confirm_code";
 
+$mail->message;
+
+$mail->AddAddress($email);
 // send email
-$sentmail = mail($to,$subject,$message,$header);
+$sentmail = $mail->Send();
 
 }
 
 // if not found
 else {
-echo "Not found your email in our database";
+	echo "Not found your email in our database";
 }
 
 // if your email succesfully sent
