@@ -42,9 +42,9 @@ $mail->Subject    = "PHPMailer Test Subject via gmail";
 // Your message
 $message="Your Comfirmation link \r\n";
 $message.="Click on this link to activate your account \r\n";
-$message.=$_SERVER['SERVER_NAME']."/confirmation.php?passkey=$confirm_code";
+$message.=$_SERVER['SERVER_NAME']."/cypages/confirmation.php?passkey=$confirm_code";
 
-$mail->message;
+$mail->MsgHTML($message);
 
 $mail->AddAddress($email);
 // send email
@@ -59,7 +59,7 @@ else {
 
 // if your email succesfully sent
 if($sentmail){
-$msg = "Your Confirmation link Has Been Sent To Your Email Address.";
+$msg = "Your Confirmation link Has Been Sent To Your Email Address."."with the following details".$message;
 }
 else {
 $msg = "Cannot send Confirmation link to your e-mail address";
