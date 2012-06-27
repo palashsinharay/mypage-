@@ -45,11 +45,11 @@ $userpass = generatePassword();
 //echo $userpass;
 
 //$output = shell_exec($url." ".$pro); 
-$output = shell_exec("sudo -u aegir ./createsite_final2 ".$url.".indusnetlabs.com ".$pro." ".$email." ".$userpass." ".$adminpass);
+$output = shell_exec("sudo -u aegir ./createsite_final2 ".$url.".deploy.loc ".$pro." ".$email." ".$userpass." ".$adminpass);
 
 //echo "<pre>$output</pre>";
-$url2 ="http://".$url.".indusnetlabs.com";
-$msg1 = "your site name is ".$url.".indusnetlabs.com";
+$url2 ="http://".$url.".deploy.loc";
+$msg1 = "your site name is ".$url.".deploy.loc";
 //-----------SEND MAIL FORM----Start------------------------------
 
 $mail             = new PHPMailer(); // PHPMailer object init
@@ -73,7 +73,7 @@ $mail->FromName   = "palash sinha ray";
 $mail->Subject    = "PHPMailer Test Subject via gmail";
 //------------------Your smtp settings-------End-----------
 
-$message = "cypage account details","your site login details","your site url is: ".$url.".indusnetlabs.com/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass");
+$message = "cypage account details","your site login details","your site url is: ".$url.".deploy.loc/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass");
 
 $mail->message;
 

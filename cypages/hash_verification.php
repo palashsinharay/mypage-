@@ -42,7 +42,7 @@ $mail->Subject    = "PHPMailer Test Subject via gmail";
 // Your message
 $message="Your Comfirmation link \r\n";
 $message.="Click on this link to activate your account \r\n";
-$message.=$_SERVER['SERVER_NAME']."/cypages/confirmation.php?passkey=$confirm_code";
+$message.=$_SERVER['SERVER_NAME']."/confirmation.php?passkey=$confirm_code";
 
 $mail->MsgHTML($message);
 
