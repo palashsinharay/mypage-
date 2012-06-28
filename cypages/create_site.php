@@ -73,11 +73,12 @@ $mail->FromName   = "palash sinha ray";
 $mail->Subject    = "PHPMailer Test Subject via gmail";
 //------------------Your smtp settings-------End-----------
 
-$message = "cypage account details","your site login details","your site url is: ".$url.".deploy.loc/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass");
+$message = "cypage account details ".$url.".deploy.loc/user"." administrator account :-  username:admin password: $adminpass publisher account :- username : $email password : $userpass");
 
-$mail->message;
+$mail->MsgHTML($message);
 
-$mail->AddAddress($email); 
+$mail->AddAddress($email);
+$mail->send(); 
 
 //-----------SEND MAIL FORM----End--------------------------------
 ?>
