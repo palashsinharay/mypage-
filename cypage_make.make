@@ -45,9 +45,8 @@ projects[devel][subdir] = "contrib"
 projects[views][version] = 2.16
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
-projects[ckeditor][version] = 1.11
-projects[cheditor][type] = "module"
-projects[cheditor][subdir] = "contrib"
+
+
 
 ; custom Modules
 ; --------
@@ -82,7 +81,6 @@ libraries[jquery][download][url] = "https://ajax.googleapis.com/ajax/libs/jquery
 libraries[jqueryui][download][type] = "file"
 libraries[jqueryui][download][url] = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"
 
-libraries[cheditor][download][type] = "file"
-libraries[cheditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.3/ckeditor_3.6.3.zip"
+
 
 
