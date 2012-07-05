@@ -1,0 +1,5 @@
+; $Id$
+name = Create page
+description = A wizard to create page...
+package = page creation wizard
+core = 6.x

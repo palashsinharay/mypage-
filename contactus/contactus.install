@@ -1,0 +1,72 @@
+<?php
+function contactus_schema() {
+$schema = array();
+
+
+$schema['contactus'] = array(
+  'description' => t('TODO: please describe this table!'),
+  'fields' => array(
+    'id' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'int',
+      'not null' => TRUE,
+    ),
+    'street' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'varchar',
+      'length' => '100',
+      'not null' => TRUE,
+    ),
+    'city' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'varchar',
+      'length' => '50',
+      'not null' => TRUE,
+    ),
+    'zip' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'int',
+      'not null' => TRUE,
+    ),
+    'country' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'varchar',
+      'length' => '50',
+      'not null' => TRUE,
+    ),
+    'state' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'varchar',
+      'length' => '50',
+      'not null' => TRUE,
+    ),
+    'phone' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'int',
+      'not null' => TRUE,
+    ),
+    'email' => array(
+      'description' => t('TODO: please describe this field!'),
+      'type' => 'varchar',
+      'length' => '50',
+      'not null' => TRUE,
+    ),
+  ),
+);
+
+
+ 
+return $schema;
+}
+
+function contactus_install() {
+
+// Create my tables.
+ drupal_install_schema('contactus');
+}
+
+function contactus_uninstall() {
+ // Drop my tables.
+ drupal_uninstall_schema('contactus');
+}
+?>
